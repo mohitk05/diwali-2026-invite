@@ -7,15 +7,17 @@ Static site + Cloudflare Worker (RSVPs stored in KV).
 npm install
 npx wrangler login
 # KV namespace id is already set in wrangler.jsonc
-npx wrangler secret put ADMIN_TOKEN        # any long random string, for viewing the guest list
 npm run deploy
 ```
 Preview locally with `npm run dev` (uses a local KV simulation).
 
 ## View RSVPs
+RSVPs are stored in KV under `rsvp:<email>`. List them from your terminal:
 ```bash
-curl -H "Authorization: Bearer $ADMIN_TOKEN" https://<your-site>.workers.dev/api/rsvps
+npx wrangler kv key list --binding RSVPS --remote --prefix rsvp:
+npx wrangler kv key get "rsvp:guest@example.com" --binding RSVPS --remote
 ```
+Or browse them in the Cloudflare dashboard under Workers & Pages -> KV.
 
 ## Last year's photos
 Drop images in `public/gallery/` and list them in `public/gallery.json`. Resize to ~1600px wide first. The current files are placeholders.

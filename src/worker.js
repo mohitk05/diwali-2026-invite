@@ -34,17 +34,6 @@ export default {
       return json({ ok: true });
     }
 
-    // Host-only guest list: GET /api/rsvps with header "Authorization: Bearer <ADMIN_TOKEN>"
-    if (url.pathname === "/api/rsvps" && request.method === "GET") {
-      if (!env.ADMIN_TOKEN || request.headers.get("authorization") !== `Bearer ${env.ADMIN_TOKEN}`) {
-        return json({ error: "Unauthorized" }, 401);
-      }
-      const { keys } = await env.RSVPS.list({ prefix: "rsvp:" });
-      const rsvps = (await Promise.all(keys.map((k) => env.RSVPS.get(k.name, "json")))).filter(Boolean);
-      const headcount = rsvps.reduce((n, r) => n + (r.guests || 0), 0);
-      return json({ headcount, rsvps });
-    }
-
     return json({ error: "Not found" }, 404);
   },
 };

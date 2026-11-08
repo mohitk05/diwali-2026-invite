@@ -12,6 +12,4 @@
   "kv_namespaces": [
     { "binding": "RSVPS", "id": "f43c6d49553a41f1aca43649683cd29a" }
   ]
-  // Secret (not in this file): ADMIN_TOKEN
-  //   local: put it in .dev.vars   production: wrangler secret put ADMIN_TOKEN
 }
