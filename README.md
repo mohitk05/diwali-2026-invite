@@ -6,7 +6,7 @@ Static site + Cloudflare Worker (RSVPs stored in KV).
 ```bash
 npm install
 npx wrangler login
-npx wrangler kv namespace create RSVPS     # paste the returned id into wrangler.jsonc
+# KV namespace id is already set in wrangler.jsonc
 npx wrangler secret put ADMIN_TOKEN        # any long random string, for viewing the guest list
 npm run deploy
 ```
