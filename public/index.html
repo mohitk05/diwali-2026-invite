@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>After-Diwali Party · 14 November 2026</title>
+  <meta name="description" content="Join us for an evening of lights, food and music. Saturday, 14 November 2026.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="glow" aria-hidden="true"></div>
+    <p class="eyebrow">You're invited</p>
+    <h1>After&#8209;Diwali<br><em>Party</em></h1>
+    <p class="date">Saturday · 14 November 2026</p>
+    <p class="sub">An evening of lights, good food &amp; music.</p>
+    <a class="btn" href="#rsvp">RSVP</a>
+  </header>
+
+  <main>
+    <section class="details">
+      <div><h3>When</h3><p>Sat, 14 Nov 2026<br>7:00 PM onwards</p></div>
+      <div><h3>Where</h3><p>Our place<br>Address shared on RSVP</p></div>
+      <div><h3>Dress</h3><p>Festive &amp; fabulous<br>Jewel tones welcome</p></div>
+    </section>
+
+    <section id="gallery">
+      <h2>Last year, in lights</h2>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section id="rsvp">
+      <h2>Will you join us?</h2>
+      <form id="form" novalidate>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label>Your name<input name="name" required maxlength="100" autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required maxlength="200" autocomplete="email"></label>
+        <fieldset>
+          <legend>Attending?</legend>
+          <label class="radio"><input type="radio" name="attending" value="yes" checked> Joyfully yes</label>
+          <label class="radio"><input type="radio" name="attending" value="no"> Sadly no</label>
+        </fieldset>
+        <label id="guests-wrap">Number of guests (including you)
+          <select name="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+        </label>
+        <label>Dietary needs or a note (optional)<textarea name="note" rows="3" maxlength="500"></textarea></label>
+        <button class="btn" type="submit">Send RSVP</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer><p>Shubh Diwali 🪔</p></footer>
+
+  <div class="lightbox" id="lightbox" hidden><img alt=""><button aria-label="Close">&times;</button></div>
+  <script src="/script.js"></script>
+</body>
+</html>
